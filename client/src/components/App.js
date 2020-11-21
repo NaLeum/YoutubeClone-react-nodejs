@@ -10,6 +10,9 @@ import RegisterPage from './views/RegisterPage/RegisterPage';
 import Footer from './views/Footer/Footer';
 import NavBar from './views/NavBar/NavBar';
 import Auth from '../hoc/auth'
+import VideoUploadPage from './views/VideoUploadPage/VideoUploadPage';
+import VideoDetailPage from './views/VideoDetailPage/VideoDetailPage';
+import SubscriptionPage from './views/SubscriptionPage/SubscriptionPage';
 
 
     // null => 아무나 출입이 가능한 페이지
@@ -30,6 +33,10 @@ const App = () => {
           <Route exact path="/" component={Auth(LandingPage,null)} />
           <Route exact path="/login" component={Auth(LoginPage,false)}/>
           <Route exact path="/register" component={Auth(RegisterPage,false)}/>
+          <Route exact path="/video/upload" component={Auth(VideoUploadPage,true)}/>
+          <Route exact path="/video/:videoId" component={Auth(VideoDetailPage,null)}/>
+          <Route exact path="/subscription" component={Auth(SubscriptionPage,null)}/>
+
         </Switch>
       </div>
     </Router>
